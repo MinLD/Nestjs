@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config'; //Dùng để load và truy cập biến môi trường (ENV).
 import { MongooseModule } from '@nestjs/mongoose'; //Dùng để kết nối với MongoDB thông qua thư viện Mongoose.
 import { UsersModule } from 'src/modules/users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { UsersModule } from 'src/modules/users/users.module';
       }),
       inject: [ConfigService], // Nest sẽ inject ConfigService vào useFactory.
     }),
+    AuthModule,
   ],
   controllers: [AppController], //Khai báo các controller mà module này sử dụng.
   providers: [AppService], //Khai báo các service (hoặc provider) mà module này cần.

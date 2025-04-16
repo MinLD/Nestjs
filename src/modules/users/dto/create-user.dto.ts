@@ -19,7 +19,6 @@ export class CreateUserDto {
   @IsNotEmpty()
   password: string;
 
-  // @Matches(/^[0-9]{10,11}$/, { message: 'Số điện thoại không hợp lệ' })
   @IsOptional()
   @IsString()
   phone: string;
@@ -32,3 +31,4 @@ export class CreateUserDto {
   @IsString()
   image: string;
 }
+// @Matches(/^[0-9]{10,11}$/, { message: 'Số điện thoại không hợp lệ' })
