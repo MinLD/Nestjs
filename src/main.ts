@@ -20,6 +20,18 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+  //config cors
+  app.enableCors({
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    credentials: true,
+  });
+  //logic register
+  //- Frontend gọi api register
+  //- Backend lưu user (trả ra id của user), đồng thời gửi email
+  //- Frontend redirect to /verify/:id
+  //- Backend viết api (/check-code) check theo id và mã code tại email
   await app.listen(port);
   //Lệnh này sẽ khởi động server và lắng nghe kết nối HTTP trên port đó.Ví dụ: http://localhost:3000
 }

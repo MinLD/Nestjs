@@ -9,6 +9,7 @@ export const hashPasswordHelper = async (plainPassword: string) => {
     console.log(err);
   }
 };
+
 export const comparePasswordHelper = async (
   plainPassword: string,
   hashPassword: string | undefined,
